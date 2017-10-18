@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h1> {{ msg2 }}</h1>
     <h2>Mega Essential Stuff</h2>
     <ul>
       <div>
@@ -18,13 +19,15 @@
 
         <div>
           Input Value: <span v-text="input_val"></span>
-
-
         </div>
+
+      <div>
+        <button class="btn btn-primary" v-on:click="counter++">You've clicked this button {{counter}} times!</button>
+      </div>
       
       <br>
     </ul>
-    <h2>Stuff</h2>
+    <h2>Stuff To Click On</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
@@ -34,11 +37,14 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'This is from within the data object. I added the members of the Beatles for no reason.',
+      msg: 'This is from within the data object.',
+      msg2: "I added the members of the Beatles for no reason.",
       users: [
         {firstName: 'Paul', lastName: 'McCartney'},
         {firstName: 'John', lastName: 'Lennon'},
@@ -46,6 +52,7 @@ export default {
         {firstName: 'Ringo', lastName: 'Starr'},
       ],
       input_val: '',
+      counter: 0
     }
   }
 }
@@ -55,6 +62,10 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+}
+
+h2 {
+  text-decoration: underline;
 }
 
 ul {
